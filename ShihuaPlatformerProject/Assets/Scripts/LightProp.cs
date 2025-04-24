@@ -57,7 +57,7 @@ public class LightProp : MonoBehaviour
             {
                 isfly = false;
                 playerTrans.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                playerTrans.SetParent(transform);
+                playerTrans.SetParent(transform.GetChild(0));
                 isgrip = true;
             }
         }

@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public LayerMask layer;
 
-    private int jumpCount = 0;
+    public int jumpCount = 0;
     public GameObject jumpEffect;
 
     public bool isAttracted = false;
@@ -27,14 +27,14 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalMove = Input.GetAxis("Horizontal");
 
-        if(Physics2D.Raycast(transform.position, Vector2.down, 0.2f, layer))
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
+        //if(Physics2D.Raycast(transform.position, Vector2.down, 0.2f, layer))
+        //{
+        //    isGrounded = true;
+        //}
+        //else
+        //{
+        //    isGrounded = false;
+        //}
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -54,11 +54,11 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontalMove * speed * Time.fixedDeltaTime, rb.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            jumpCount = 0; // Reset jump count when touching the ground
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        jumpCount = 0; // Reset jump count when touching the ground
+    //    }
+    //}
 }
